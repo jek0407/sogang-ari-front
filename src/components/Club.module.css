@@ -1,4 +1,4 @@
-.movie {
+.club {
   background-color: white;
   margin-bottom: 70px;
   font-weight: 300;
@@ -14,7 +14,7 @@
     0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
 }
 
-.movie__img {
+.club__img {
   position: relative;
   top: -50px;
   max-width: 150px;
@@ -24,7 +24,7 @@
     0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
 }
 
-.movie__img2 {
+.club__img2 {
   position: relative;
   max-width: 250px;
   width: 100%;
@@ -33,29 +33,29 @@
     0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
 }
 
-.movie__title,
-.movie__year,
-.movie__sumamry {
+.club__title,
+.club__year,
+.club__sumamry {
   margin: 0;
   font-weight: 300;
   text-decoration: none;
 }
 
-.movie__rating {
+.club__rating {
   text-align: right;
   margin: 0;
   font-weight: 300;
   text-decoration: none;
 }
 
-.movie__title a {
+.club__title a {
   margin-bottom: 5px;
   font-size: 24px;
   color: #2c2c2c;
   text-decoration: none;
 }
 
-.movie__genres {
+.club__genres {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -64,13 +64,13 @@
   margin: 5px 0px;
 }
 
-.movie__genres li,
-.movie__year {
+.club__genres li,
+.club__year {
   margin-right: 10px;
   font-size: 14px;
 }
 
-.movie__summary a {
+.club__summary a {
   margin-bottom: 5px;
   font-size: 16px;
   color: #2c2c2c;
@@ -82,7 +82,7 @@ ul {
   margin-right: 10px;
 }
 
-.movie__detail {
+.club__detail {
   list-style: none;
   padding: 0;
   margin: 0;

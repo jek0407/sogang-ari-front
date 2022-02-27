@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
-import styles from "./Movie.module.css";
+import styles from "./Club.module.css";
 
-function MovieDetail({
+function ClubDetail({
   download,
   genres,
   like,
@@ -12,16 +12,16 @@ function MovieDetail({
   summary,
 }) {
   return (
-    <div className={styles.movie}>
-      <img src={coverImg} alt="Poster" className={styles.movie__img2} />
+    <div className={styles.club}>
+      <img src={coverImg} alt="Poster" className={styles.club__img2} />
       <div>
-        <h1 className={styles.movie__title}>{title}</h1>
-        <p className={styles.movie__rating}>rating : {rating} / 10.0</p>
-        <p className={styles.movie__summary}>
+        <h1 className={styles.club__title}>{title}</h1>
+        <p className={styles.club__rating}>rating : {rating} / 10.0</p>
+        <p className={styles.club__summary}>
           {summary.length < 10 ? "No description." : summary}
         </p>
         <hr />
-        <div className={styles.movie__detail}>
+        <div className={styles.club__detail}>
           <ul>
             <h4>Genres</h4>
             {genres.map((genre) => (
@@ -46,7 +46,7 @@ function MovieDetail({
   );
 }
 
-MovieDetail.propTypes = {
+ClubDetail.propTypes = {
   download: PropTypes.number,
   like: PropTypes.number,
   runtime: PropTypes.number,
@@ -58,4 +58,4 @@ MovieDetail.propTypes = {
   genres: PropTypes.arrayOf(PropTypes.string),
 };
 
-export default MovieDetail;
+export default ClubDetail;

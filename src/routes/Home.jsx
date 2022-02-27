@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import Movie from "../components/Movie";
+import Club from "../components/Club";
 import styles from "./Home.module.css";
 
 function Home() {
   const [loading, setLoading] = useState(true);
   const [rateInput, setRateInput] = useState(false);
-  const [movies, setMovies] = useState([]);
+  const [clubs, setClubs] = useState([]);
   const [rating, setRating] = useState("?");
   const [tmp, setTmp] = useState();
 
@@ -22,62 +22,77 @@ function Home() {
     setRating(tmp);
     setRateInput(true);
   };
-  const getMovies = async () => {
+  const getClubs = async () => {
     const json = await (
       await fetch(
-        `https://yts.mx/api/v2/list_movies.json?minimum_rating=${rating}&sort_by=year`
+        `https://yts.mx/api/v2/list_movies.json?minimum_rating=8.5&sort_by=year`
       )
     ).json();
-    setMovies(json.data.movies);
+    console.log(json);
+    setClubs(json.data.movies);
     setLoading(false);
   };
 
   /* running one time */
   useEffect(() => {
-    getMovies();
+    getClubs();
   }, [rating]);
 
-  console.log(movies);
+  // console.log(clubs);
   return (
-    <div className="App">
+    <div className={styles.App}>
       <div className={styles.container}>
         <h1>
-          The {movies.length} Recent Movies Rated Higher Than
-          {<span className={styles.word}> {rating}</span>}
+          서강아리
+          {<span className={styles.word}> !</span>}
         </h1>
       </div>
-      <div className={styles.container}>
-        <p>
-          - referenced on the <a href="https://yts.mx/">yts.mx</a>
-          {"   | "}
-          <strong>JK</strong>
-        </p>
-      </div>
-      <div className={styles.container}>
-        {rateInput ? (
-          loading ? (
-            <h3>Loading...</h3>
-          ) : (
-            <div>
-              <div className={styles.movies}>
-                {movies.map((movie) => (
-                  <Movie
-                    key={movie.id}
-                    id={movie.id}
-                    title={movie.title}
-                    year={movie.year}
-                    rating={movie.rating}
-                    coverImg={movie.medium_cover_image}
-                    summary={movie.summary}
-                    genres={movie.genres}
-                  />
-                ))}
-              </div>
+      <div>
+        {rateInput ? null : (
+          <div>
+            <div className={styles.container}>
+              <p>
+                - 환영합니다, 서강대학교 동아리 플랫폼입니다!
+                {" | "}
+                {<span className={styles.word}>Team Luwak</span>}
+              </p>
             </div>
-          )
-        ) : (
+            <div className={styles.container}>
+              <p>
+                서강대학교 총동아리 연합 학생회{" "}
+                <a href="https://sgdongyeon.oopy.io/">[바로가기]</a>
+              </p>
+            </div>
+          </div>
+        )}
+      </div>
+      <div>
+        {rateInput ? (
           <div>
             <br /> <br /> <br />
+            <div className={styles.container}>
+              <button className={styles.btn_a} onClick={onClick}>
+                봉사
+              </button>
+              <button className={styles.btn_a} onClick={onClick}>
+                사회교양
+              </button>
+              <button className={styles.btn_a} onClick={onClick}>
+                종교
+              </button>
+              <button className={styles.btn_a} onClick={onClick}>
+                연행예술
+              </button>
+              <button className={styles.btn_a} onClick={onClick}>
+                체육
+              </button>
+              <button className={styles.btn_a} onClick={onClick}>
+                학술
+              </button>
+            </div>
+            <div className={styles.search}>
+              <br /> <br /> <br />
+            </div>
             <div className={styles.container}>
               <input
                 type="search"
@@ -85,10 +100,79 @@ function Home() {
                 value={tmp}
                 onChange={handleChange}
                 onKeyPress={handleKeyPress}
-                placeholder="Enter the rate"
+                placeholder="이름으로 검색하기"
               />
 
-              <button onClick={onClick}>GO</button>
+              <button className={styles.btn} onClick={onClick}>
+                GO
+              </button>
+            </div>
+          </div>
+        ) : (
+          <div className={styles.bg}></div>
+        )}
+      </div>
+
+      <div className={styles.container}>
+        {rateInput ? (
+          loading ? (
+            <h3>Loading...</h3>
+          ) : (
+            <div>
+              <div className={styles.clubs}>
+                {clubs.map((club) => (
+                  <Club
+                    key={club.id}
+                    id={club.id}
+                    title={club.title}
+                    year={club.year}
+                    rating={club.rating}
+                    coverImg={club.medium_cover_image}
+                    summary={club.summary}
+                    genres={club.genres}
+                  />
+                ))}
+              </div>
+            </div>
+          )
+        ) : (
+          <div>
+            <div className={styles.search}>
+              <button className={styles.btn_a} onClick={onClick}>
+                봉사
+              </button>
+              <button className={styles.btn_a} onClick={onClick}>
+                사회교양
+              </button>
+              <button className={styles.btn_a} onClick={onClick}>
+                종교
+              </button>
+              <button className={styles.btn_a} onClick={onClick}>
+                연행예술
+              </button>
+              <button className={styles.btn_a} onClick={onClick}>
+                체육
+              </button>
+              <button className={styles.btn_a} onClick={onClick}>
+                학술
+              </button>
+            </div>
+            <div className={styles.search}>
+              <br /> <br /> <br />
+            </div>
+            <div className={styles.container}>
+              <input
+                type="search"
+                id="search"
+                value={tmp}
+                onChange={handleChange}
+                onKeyPress={handleKeyPress}
+                placeholder="이름으로 검색하기"
+              />
+
+              <button className={styles.btn} onClick={onClick}>
+                GO
+              </button>
             </div>
           </div>
         )}
