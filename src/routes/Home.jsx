@@ -43,8 +43,8 @@ function Home() {
     <div className={styles.App}>
       <div className={styles.container}>
         <h1>
-          서강아리
-          {<span className={styles.word}> !</span>}
+          <br />
+          <stong>서강아리</stong> {<span className={styles.word}> !</span>}
         </h1>
       </div>
       <div>
@@ -52,9 +52,13 @@ function Home() {
           <div>
             <div className={styles.container}>
               <p>
-                - 환영합니다, 서강대학교 동아리 플랫폼입니다!
+                - 환영합니다, <strong>서강</strong>대학교 동
+                <strong>아리</strong>
+                플랫폼입니다!
                 {" | "}
-                {<span className={styles.word}>Team Luwak</span>}
+                <a href="https://www.instagram.com/jooeon.kang/?hl=ko">
+                  @Team_Luwak
+                </a>
               </p>
             </div>
             <div className={styles.container}>
@@ -109,7 +113,9 @@ function Home() {
             </div>
           </div>
         ) : (
-          <div className={styles.bg}></div>
+          <a href="https://www.sogang.ac.kr/campus/b_club03.html">
+            <div className={styles.bg}></div>
+          </a>
         )}
       </div>
 
@@ -138,6 +144,8 @@ function Home() {
         ) : (
           <div>
             <div className={styles.search}>
+              <br />
+              <br />
               <button className={styles.btn_a} onClick={onClick}>
                 봉사
               </button>

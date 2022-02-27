@@ -1,8 +1,9 @@
 .bg {
-  background-image: url("../../images/sogang_bg-removebg.png");
-  background-size: cover;
+  background-image: url("../../images/sogang.png");
+  background-size: contain;
   width: 100%;
-  height: 450px;
+  height: 200px;
+  background-position: center;
 }
 
 .container {
@@ -70,7 +71,15 @@ button {
   z-index: 0;
   border-radius: 10px;
 }
-
+a {
+  text-decoration: solid;
+  color: rgb(255, 0, 106);
+  font-weight: 400;
+  transition: all 0.2s;
+}
+a:hover {
+  font-weight: bolder;
+}
 .btn:before {
   content: "";
   background: linear-gradient(
@@ -181,5 +190,12 @@ button {
   }
   100% {
     background-position: 0 0;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .img_center {
+    text-align: left;
+    left: -255px;
   }
 }
