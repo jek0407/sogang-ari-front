@@ -18,11 +18,7 @@ function MovieDetail({
         <h1 className={styles.movie__title}>{title}</h1>
         <p className={styles.movie__rating}>rating : {rating} / 10.0</p>
         <p className={styles.movie__summary}>
-          {summary.length < 10
-            ? "No description."
-            : summary.length > 235
-            ? `${summary.slice(0, 235)}...`
-            : summary}
+          {summary.length < 10 ? "No description." : summary}
         </p>
         <hr />
         <div className={styles.movie__detail}>
