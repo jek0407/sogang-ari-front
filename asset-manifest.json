@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/sogang-ari-front/static/css/main.90b4f77e.css",
+    "main.js": "/sogang-ari-front/static/js/main.034fae56.js",
+    "static/media/sogang.png": "/sogang-ari-front/static/media/sogang.ec28ab86b2c9066c517a.png",
+    "index.html": "/sogang-ari-front/index.html",
+    "main.90b4f77e.css.map": "/sogang-ari-front/static/css/main.90b4f77e.css.map",
+    "main.034fae56.js.map": "/sogang-ari-front/static/js/main.034fae56.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.90b4f77e.css",
+    "static/js/main.034fae56.js"
+  ]
+}
